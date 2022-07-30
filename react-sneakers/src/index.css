@@ -4,6 +4,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
+  scrollbar-width: thin;  
+}
+::-webkit-scrollbar {
+  width: 6px; /* ширина для вертикального скролла */
+  height: 6px; /* высота для горизонтального скролла */
+  background-color: #e7f6ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 10px #000;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #000;
 }
 
 code {

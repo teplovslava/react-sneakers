@@ -84,11 +84,16 @@
 }
 
 .itemAddBtn{
-    background-color: transparent;
-    border: 0;
-    padding: 0;
     margin-right: 29px;
     cursor: pointer;
+    transition: transform .2s ease-in-out;
+    -webkit-transition: transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
+    -ms-transition: transform .2s ease-in-out;
+    -o-transition: transform .2s ease-in-out;
+}
+
+.itemAddBtn:active{ transform: scale(0.8); -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8);
 }
 
 

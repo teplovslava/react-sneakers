@@ -1,0 +1,64 @@
+.headerLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 45px;
+    padding-top: 45px;
+}
+
+.headerH3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #000000;
+    padding: 0;
+    margin: 0;
+}
+
+.HeaderDescr{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9D9D9D;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    margin-right: 15px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 44px;
+    border-bottom: 1px solid #EAEAEA;
+    margin-bottom: 45px;
+}
+
+.headerRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding-top: 55px;
+    padding-right: 35px;
+    margin: 0;
+}
+
+.headerItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.headerImg{
+    margin-right: 10px;
+}
