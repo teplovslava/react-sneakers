@@ -35,6 +35,7 @@ function App() {
 
   }
 
+
   return (
   <div className={style.wrapper}>
     {isOpenedCard&&<Cart cardItem={cardItem} setCardItem={setCardItem} onDelete={onDelete} onCloseCart={()=>(setIsOpenedCard(false))}/>}
@@ -48,8 +49,18 @@ function App() {
         </div>
         </div>
         <div className={style.itemStyle}>
-        {item.filter(item=>item.name.toLowerCase().includes(searching.toLowerCase()))
-        .map((item,index)=><Item key={index} index={index} onPlus1={obj=>onClickPlus(obj)} item={item}/>)}
+          {item.length>0?item.filter(item=>item.name.toLowerCase().includes(searching.toLowerCase()))
+        .map((item,index)=><Item key={index} index={index} onPlus1={obj=>onClickPlus(obj)} item={item}/>):    
+        <div className={style.loader}>
+        <div className={style.circle}></div>
+        <div className={style.circle}></div>
+        <div className={style.circle}></div>
+        <div className={style.shadow}></div>
+        <div className={style.shadow}></div>
+        <div className={style.shadow}></div>
+        <span className={style.span}>Loading</span>
+    </div>}
+        
         </div>
       </div>
   </div>

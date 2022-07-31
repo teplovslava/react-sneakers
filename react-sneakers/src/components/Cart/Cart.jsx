@@ -4,12 +4,13 @@ const Cart =(props)=>{
     return(
         <div className={style.overlay}>
         <div className={style.cart}>
-          <div className={style.cartMainContent}>
+        {props.cardItem.length>0?
+        <div className={style.cartMainContent}>
             <div className={style.cartClose}> 
               <h3 className={style.cartH3}>Корзина</h3>
               <img className={style.closeBtn} onClick={props.onCloseCart} src='/img/close.png' alt='close'/>
               </div>
-              
+      
           <div className={style.cartItems}>
             {
               props.cardItem.map((item,index)=>(<div className={style.cardItemContent}> 
@@ -35,7 +36,16 @@ const Cart =(props)=>{
             </li>
           </ul>
           <button className={style.greenBtn}>Оформить заказ<img className={style.greenBtnImg} src="/img/Group.png" alt=' '/></button>
-          </div>
+          </div>:<div className={style.cartMainContent}>
+            <h3 className={style.cartH3}>Корзина</h3>
+            <div className={style.emptyCart}>
+              <img src="/img/cart.png" alt=' '/>
+              <h3 className={style.emptyCartName}>Корзина пустая</h3>
+              <p className={style.emptyCartDescr}>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
+              <button onClick={props.onCloseCart} className={style.emptyCartBtn}><img className={style.emptyCartBack} src='/img/arrBack.png' alt=''/>Вернуться назад</button>
+              </div>
+            </div>}
+
           
         </div>
       </div>
