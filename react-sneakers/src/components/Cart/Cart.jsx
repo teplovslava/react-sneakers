@@ -19,7 +19,7 @@ const Cart =(props)=>{
                 <p className={style.cardItemName}>{item.name}</p>
                 <b className={style.cardItemCost}>{item.cost}</b>
                 </div>
-                <img onClick={()=>props.onDelete(item.id)} width={20} height={20} className={style.cardCloseImg} src='/img/close.png' alt='close'/>
+                <img onClick={()=>props.onDelete(item.id)} width={20} height={20} className={style.cardCloseImg} src='img/close.png' alt='close'/>
               </div>))
             }
           </div>
