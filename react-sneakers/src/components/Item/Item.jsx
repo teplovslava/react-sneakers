@@ -25,10 +25,10 @@ const Item = ({item,index,onPlus1,onFavour}) =>{
             <span className={style.itemCost}>Цена:</span>
             <b className={style.itemCostCount}>{item.cost}</b>
             </div>
-                <img onClick={onPlus} className={style.itemAddBtn} src={isAdded?'/img/added.png':'/img/Group 91.png'} alt=" "/>
+                <img onClick={onPlus} className={style.itemAddBtn} src={isAdded?'img/added.png':'img/Group 91.png'} alt=" "/>
             </div>
             <button onClick={onFav} className={style.favouriteBtn}>
-                <img src={isFav?'/img/Fav.png':'/img/Group 90.png'} alt=""/>
+                <img src={isFav?'img/Fav.png':'img/Group 90.png'} alt=""/>
             </button>
             </div>
         </div>
