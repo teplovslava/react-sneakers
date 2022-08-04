@@ -75,9 +75,13 @@ input::placeholder{
 .loader{
     width:200px;
     height:60px;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -50%);
     margin: 0 auto;
     margin-bottom: 40px;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
 }
 .circle{
     width:20px;

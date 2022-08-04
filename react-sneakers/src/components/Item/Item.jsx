@@ -1,12 +1,16 @@
 import style from './Item.module.css'
 import { useState } from 'react'
 
-const Item = ({item,index,onPlus1}) =>{
+const Item = ({item,index,onPlus1,onFavour}) =>{
     const [isAdded,setAdded] = useState(false)
-
+    const [isFav,setFav] = useState(false)
     function onPlus(){
         onPlus1(item,index)
         setAdded(!isAdded)
+      }
+      function onFav(){
+        onFavour(item,index,setFav,isFav)
+        setFav(!isFav)
       }
 
     return (
@@ -23,8 +27,8 @@ const Item = ({item,index,onPlus1}) =>{
             </div>
                 <img onClick={onPlus} className={style.itemAddBtn} src={isAdded?'/img/added.png':'/img/Group 91.png'} alt=" "/>
             </div>
-            <button className={style.favouriteBtn}>
-                <img src='/img/Group 90.png' alt=""/>
+            <button onClick={onFav} className={style.favouriteBtn}>
+                <img src={isFav?'/img/Fav.png':'/img/Group 90.png'} alt=""/>
             </button>
             </div>
         </div>

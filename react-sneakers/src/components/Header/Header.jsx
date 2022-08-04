@@ -1,4 +1,4 @@
- import style from './Header.module.css'
+import style from './Header.module.css'
  import logo from '../../assets/img/logo.png'
 
  const Header =(props)=>{

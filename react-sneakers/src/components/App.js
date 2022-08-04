@@ -7,6 +7,12 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 
+
+
+
+
+
+
 function App() {
   const [item,setItem]= useState(
     []
@@ -14,20 +20,30 @@ function App() {
 
   useEffect(()=>
     {axios.get('https://62e3c1ef3c89b95396cfb80f.mockapi.io/sneakers').then((res)=>{setItem(res.data)});
-    axios.get('https://62e3c1ef3c89b95396cfb80f.mockapi.io/cart').then((res)=>{setCardItem(res.data)})},[])
+    axios.get('https://62e3c1ef3c89b95396cfb80f.mockapi.io/cart').then((res)=>{setCardItem(res.data)});
+    axios.get('https://62e3c1ef3c89b95396cfb80f.mockapi.io/favourites').then((res)=>{setFavItem(res.data)})},[])
 
 
   const [isOpenedCard, setIsOpenedCard] = useState(false)
   const [cardItem, setCardItem] = useState([])
+  const [favItem, setFavItem] = useState([])
   const [searching,setSearch]= useState('')
 
   function onClickPlus(obj){
     axios.post('https://62e3c1ef3c89b95396cfb80f.mockapi.io/cart',obj)
     setCardItem([...cardItem,obj])
   }
+
+  function onClickFav(obj){
+    axios.post('https://62e3c1ef3c89b95396cfb80f.mockapi.io/favourites',obj)
+    setFavItem([...favItem,obj])
+  }
   function onInput(event){
     setSearch(event.target.value)
   }
+
+
+
 
   function onDelete(id){
     setCardItem((prev)=>prev.filter(item=>item.id!==id))
@@ -50,20 +66,20 @@ function App() {
         </div>
         <div className={style.itemStyle}>
           {item.length>0?item.filter(item=>item.name.toLowerCase().includes(searching.toLowerCase()))
-        .map((item,index)=><Item key={index} index={index} onPlus1={obj=>onClickPlus(obj)} item={item}/>):    
-        <div className={style.loader}>
-        <div className={style.circle}></div>
-        <div className={style.circle}></div>
-        <div className={style.circle}></div>
-        <div className={style.shadow}></div>
-        <div className={style.shadow}></div>
-        <div className={style.shadow}></div>
-        <span className={style.span}>Loading</span>
-    </div>}
-        
-        </div>
+        .map((item,index)=><Item key={index} index={index} onFavour={obj=>onClickFav(obj)} onPlus1={obj=>onClickPlus(obj)} item={item}/>):    
+            <div className={style.loader}>
+            <div className={style.circle}></div>
+            <div className={style.circle}></div>
+            <div className={style.circle}></div>
+            <div className={style.shadow}></div>
+            <div className={style.shadow}></div>
+            <div className={style.shadow}></div>
+            <span className={style.span}>Loading</span>
+          </div>}
+            </div>
       </div>
-  </div>
+        
+      </div>
   );
 }
 
