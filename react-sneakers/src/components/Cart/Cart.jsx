@@ -42,7 +42,7 @@ const Cart =(props)=>{
               <img src="img/cart.png" alt=' '/>
               <h3 className={style.emptyCartName}>Корзина пустая</h3>
               <p className={style.emptyCartDescr}>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-              <button onClick={props.onCloseCart} className={style.emptyCartBtn}><img className={style.emptyCartBack} src='/img/arrBack.png' alt=''/>Вернуться назад</button>
+              <button onClick={props.onCloseCart} className={style.emptyCartBtn}><img className={style.emptyCartBack} src='img/arrBack.png' alt=''/>Вернуться назад</button>
               </div>
             </div>}
 
